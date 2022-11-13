@@ -1,6 +1,5 @@
 /*  Parametros [opcionais posicionais] e {opcionais nomeados} 
-    de funções em dart                                          */ 
-
+    de funções em dart                                          */
 
 void main(List<String> args) {
   saudacao('Lucas');
@@ -8,19 +7,26 @@ void main(List<String> args) {
   saudacao('Aline', mostrarAgora: false);
   print('\n');
   saudacao('Joao', sep: '*');
+  print('\n');
 
+  //Apenas uma forma simplificada de
+  //declarar uma função (Função Lambda)
+  String umaString = function();
+  print(umaString);
 }
 
-void saudacao(String nome, {bool mostrarAgora = true, String sep = '-'}){
+String function() => 'Uma string em maiúsculo'.toUpperCase();
+
+void saudacao(String nome, {bool mostrarAgora = true, String sep = '-'}) {
   print(sep * 25);
   print("Olá! Saudações do(a) $nome");
   print("Seja bem-vindo(a)!");
-  if(mostrarAgora){
+  if (mostrarAgora) {
     print("São ${agora()}");
   }
 }
 
-String agora(){
+String agora() {
   DateTime agora = DateTime.now();
   return agora.toString();
 }
